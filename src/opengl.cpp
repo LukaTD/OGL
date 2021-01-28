@@ -383,22 +383,22 @@ void GetInput(GLFWwindow *window, Camera *camera, Mouse *mouse)
 
 			if(deltaDeg > 0)
 			{
-				if(degUpAndDirection - deltaDeg > 0.f)
+				if(degUpAndDirection - deltaDeg > 15.f)
 					camera->direction = glm::rotate(camera->direction,glm::radians(deltaDeg),
 													camera->left);
 				else
 					camera->direction = glm::rotate(camera->direction,
-													glm::radians(degUpAndDirection - 0.3f),
+													glm::radians(degUpAndDirection - 15.f),
 													camera->left);
 			}
 			else
 			{
-				if(degUpAndDirection - deltaDeg < 180.f)
+				if(degUpAndDirection - deltaDeg < 165.f)
 					camera->direction = glm::rotate(camera->direction,glm::radians(deltaDeg),
 													camera->left);
 				else
 					camera->direction = glm::rotate(camera->direction,
-													glm::radians(degUpAndDirection - 180.f + 0.3f),
+													glm::radians(degUpAndDirection - 165.f),
 													camera->left);
 			}	
 		}
