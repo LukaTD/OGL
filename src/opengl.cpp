@@ -380,25 +380,26 @@ void GetInput(GLFWwindow *window, Camera *camera, Mouse *mouse)
 			const f32 deltaDeg = -mouse->deltaY*degPerPixel;
 			const f32 degUpAndDirection = glm::degrees(glm::acos(glm::dot(camera->up,
 																		  camera->direction)));
+			const f32 offset = 10.f;
 
 			if(deltaDeg > 0)
 			{
-				if(degUpAndDirection - deltaDeg > 15.f)
+				if(degUpAndDirection - deltaDeg > offset)
 					camera->direction = glm::rotate(camera->direction,glm::radians(deltaDeg),
 													camera->left);
 				else
 					camera->direction = glm::rotate(camera->direction,
-													glm::radians(degUpAndDirection - 15.f),
+													glm::radians(degUpAndDirection - offset),
 													camera->left);
 			}
 			else
 			{
-				if(degUpAndDirection - deltaDeg < 165.f)
+				if(degUpAndDirection - deltaDeg < 180 - offset)
 					camera->direction = glm::rotate(camera->direction,glm::radians(deltaDeg),
 													camera->left);
 				else
 					camera->direction = glm::rotate(camera->direction,
-													glm::radians(degUpAndDirection - 165.f),
+													glm::radians(degUpAndDirection - 180 - offset),
 													camera->left);
 			}	
 		}
