@@ -1,0 +1,6 @@
+# Files that don't need to be in a repo
+*.exe
+*.o
+
+# User config files
+.vscode
