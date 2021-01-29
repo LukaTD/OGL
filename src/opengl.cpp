@@ -399,7 +399,7 @@ void GetInput(GLFWwindow *window, Camera *camera, Mouse *mouse)
 													camera->left);
 				else
 					camera->direction = glm::rotate(camera->direction,
-													glm::radians(degUpAndDirection - 180 - offset),
+													glm::radians(degUpAndDirection - 180 + offset),
 													camera->left);
 			}	
 		}
